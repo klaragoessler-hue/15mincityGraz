@@ -1,0 +1,24 @@
+[project]
+name = "fifteen-min-city-graz"
+version = "0.1.0"
+requires-python = ">=3.14"
+dependencies = [
+    "contextily>=1.7.1",
+    "folium>=0.20.0",
+    "geopandas>=1.2.0",
+    "mapclassify>=2.11.0",
+    "marimo>=0.25.2",
+    "matplotlib>=3.11.2",
+    "networkx>=3.7",
+    "osm-humanized-opening-hours>=0.6.2",
+    "osmnx>=2.1.1",
+    "pandas>=3.1.1",
+    "rasterio>=1.5.2",
+    "scipy>=1.18.1",
+    "seaborn>=0.13.2",
+]
+
+[tool.uv]
+# Dateien kopieren statt verlinken: verhindert unter Windows den Fehler
+# "Der Cloudvorgang kann nicht ... ausgeführt werden (os error 396)".
+link-mode = "copy"
