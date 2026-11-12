@@ -1,18 +1,18 @@
-bezirk_nr;bezirk;einwohner;anteil_65plus
-1;Innere Stadt;4096;
-2;Sankt Leonhard;18163;
-3;Geidorf;29551;
-4;Lend;37775;
-5;Gries;34180;
-6;Jakomini;37647;
-7;Liebenau;18065;
-8;Sankt Peter;18385;
-9;Waltendorf;14139;
-10;Ries;7198;
-11;Mariatrost;11273;
-12;Andritz;21201;
-13;Gösting;12244;
-14;Eggenberg;28593;
-15;Wetzelsdorf;18022;
-16;Straßgang;22772;
-17;Puntigam;12087;
+bezirk_nr;bezirk;einwohner;einwohner_hws;alter_60_69;alter_70plus;anteil_65plus
+1;Innere Stadt;4096;3214;314;414;0.1777
+2;Sankt Leonhard;18163;14520;1327;1859;0.1737
+3;Geidorf;29551;23823;1994;3433;0.1860
+4;Lend;37775;34683;3213;3501;0.1473
+5;Gries;34180;30780;2765;2508;0.1264
+6;Jakomini;37647;32311;3128;3329;0.1514
+7;Liebenau;18065;16760;1879;2008;0.1759
+8;Sankt Peter;18385;16610;2196;2587;0.2219
+9;Waltendorf;14139;12429;1544;2367;0.2526
+10;Ries;7198;6232;837;1142;0.2504
+11;Mariatrost;11273;10005;1249;1464;0.2087
+12;Andritz;21201;19430;2622;3475;0.2463
+13;Gösting;12244;11426;1462;1480;0.1935
+14;Eggenberg;28593;26270;2664;2673;0.1525
+15;Wetzelsdorf;18022;16932;2242;2717;0.2267
+16;Straßgang;22772;21293;2424;2520;0.1753
+17;Puntigam;12087;11194;1145;1039;0.1440
