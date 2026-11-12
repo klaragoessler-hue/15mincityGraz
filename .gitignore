@@ -224,6 +224,8 @@ data/raw/*
 data/processed/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
+# kleine, selbst erstellte Eingabedateien dürfen ins Repo
+!data/raw/bezirke_bevoelkerung.csv
 
 # marimo cache
 __marimo__/
