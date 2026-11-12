@@ -61,10 +61,12 @@ ox.__version__
 # GRAZ:      pop['node'] = ox.distance.nearest_nodes(G, pop.geometry.x, pop.geometry.y)
 #             (G muss dafür projiziert sein, z. B. EPSG:32633, Koordinaten in Metern)
 # FUNCTION 1: Add neareast nodeID as column
-def nearestNodeID(df):
-    df['x'] = df.geometry.x
+def nearestNodeID(df):              #definiert die funktion nearestNode, bekommt tabelle
+    df['x'] = df.geometry.x             #mit den x und y Koordinaten jedes Punktes
     df['y'] = df.geometry.y
-    df["node_id"] = network.get_node_ids(df['x'], df['y']).values
+    df["node_id"] = network.get_node_ids(df['x'], df['y']).values #getnode sucht sich den nächsten knoten und gibt desen ID zurück
+                                                                    #.values macht daraus Liste aus zahlen
+                                                                    #neue spalte it IDs wird erstellt - node_id
 
     return df
 
@@ -72,6 +74,7 @@ def nearestNodeID(df):
 #             Supermärkte am selben Knoten hängen. Spart Rechenzeit bei Pandana.
 # GRAZ:      Brauchen wir nicht: Der Multi-Source-Dijkstra (siehe unten) rechnet
 #             ohnehin für jeden Knoten nur einmal.
+#               kommt ganz weg für graz
 # FUNCTION 2: Get unique nodes
 def getUniqueNodes (df):
     nodes_unique_population = df.groupby(['node_id']).first().reset_index()
@@ -96,6 +99,18 @@ def calculateWalkingTimes(df):
         df["tt_"+str(speed)] = df["distance_17"] / speed * 60
         speed += 100
     return df
+
+#für Graz
+#def gehzeit_min(distanz_m, kmh):
+#    """Gehzeit in Minuten für eine Distanz in Metern und Geschwindigkeit in km/h."""
+ #   return distanz_m / (kmh * 1000 / 60)
+
+# Sensitivitätsanalyse: Anteil der Bevölkerung mit Supermarkt in ≤ 15 min
+#ergebnisse = []
+#for kmh in np.arange(3.0, 6.05, 0.1):          # 3,0 bis 6,0 km/h
+ #   zeit = gehzeit_min(pop["dist_17"], kmh)
+ #   anteil = pop.loc[zeit <= 15, "einwohner"].sum() / pop["einwohner"].sum()
+  #  ergebnisse.append({"kmh": round(kmh, 1), "anteil_15min": anteil})
 
 # ERKLÄRUNG: Zählt pro Startpunkt, wie viele Supermärkte in <= 15 min erreichbar
 #             sind, und mittelt das über alle Startpunkte - für jede der 41
